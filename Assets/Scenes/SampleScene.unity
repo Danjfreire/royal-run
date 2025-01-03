@@ -503,6 +503,7 @@ MonoBehaviour:
   levelChunkParent: {fileID: 212708229}
   chunkAmount: 12
   chunkLength: 10
+  chunkMoveSpeed: 8
 --- !u!4 &793043817
 Transform:
   m_ObjectHideFlags: 0
