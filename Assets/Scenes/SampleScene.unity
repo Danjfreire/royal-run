@@ -455,6 +455,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 5703743811206989717, guid: 82e855746faa33740abe0239944b5846, type: 3}
   - {fileID: 8081460217173546621, guid: 1c71f3ea974256b4aaf599d4247b6b26, type: 3}
+  - {fileID: 1612158617503565955, guid: 89248be0a50f55b4da8af532680df0ad, type: 3}
   spawnDelay: 2
   xBound: 4
 --- !u!1001 &584333777

@@ -117,6 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4175748270782895959}
+  - component: {fileID: 1335084465143149363}
   m_Layer: 0
   m_Name: Level Chunk
   m_TagString: Untagged
@@ -140,6 +141,23 @@ Transform:
   - {fileID: 1972520053451425275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1335084465143149363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424207931475304043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4a218045b960740be5b0b86b8909b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fencePrefab: {fileID: 6195229992069834695, guid: a00d1cd0c6e871145b3ed4c0d8f68f80, type: 3}
+  lanePositions:
+  - -2.5
+  - 0
+  - 2.5
 --- !u!1 &7834080638756352730
 GameObject:
   m_ObjectHideFlags: 0
