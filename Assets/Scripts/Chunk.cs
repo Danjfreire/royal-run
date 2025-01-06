@@ -53,12 +53,12 @@ public class Chunk : MonoBehaviour
         int lane = SelectLane();
         int maxExclusiveCoins = 6;
         int coinsToSpawn = Random.Range(1, maxExclusiveCoins); // generate up to 5 coins
-        float initialZSpawnPos = -4f; // start spawning at the bottom of the block
+        float initialZspawnPos = -4f; // start spawning at the bottom of the block
         float spawnZoffset = 2f;
 
         for (int i = 0; i < coinsToSpawn; i++)
         {
-            float zPosition = transform.position.z + initialZSpawnPos + (spawnZoffset * i);
+            float zPosition = transform.position.z + initialZspawnPos + (spawnZoffset * i);
             Vector3 spawnPosition = new Vector3(lanePositions[lane], transform.position.y, zPosition);
             Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform);
         }
