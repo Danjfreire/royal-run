@@ -10,7 +10,7 @@ public class Chunk : MonoBehaviour
     [SerializeField] private float appleSpawnChance = 0.3f;
     [SerializeField] private float coinSpawnChance = 0.5f;
 
-    [SerializeField] private float[] lanePositions = { -2.5f, 0f, 2.5f };
+    [SerializeField] private float[] lanePositions = { -3f, 0f, 3f };
 
     private List<int> availableLanes = new List<int> { 0, 1, 2 };
 
