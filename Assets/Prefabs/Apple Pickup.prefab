@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4353183141855447214}
   - component: {fileID: 5375611215827701676}
-  - component: {fileID: -1298598094195912883}
+  - component: {fileID: 2563126316662877067}
   m_Layer: 0
   m_Name: Apple Pickup
   m_TagString: Untagged
@@ -57,7 +57,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.56, z: 0}
---- !u!114 &-1298598094195912883
+--- !u!114 &2563126316662877067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,9 +66,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 654982645707101484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee4aa17fddcc8645ba7103a32ec3446, type: 3}
+  m_Script: {fileID: 11500000, guid: 453733d53585ac64d9a9ff7b7409e192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 100
 --- !u!1 &7103015573289468364
 GameObject:
   m_ObjectHideFlags: 0
