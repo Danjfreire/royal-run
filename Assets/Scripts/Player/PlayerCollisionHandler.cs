@@ -7,6 +7,7 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private float collisionCD = 1f;
+    [SerializeField] private float collisionSpeedPenalty = 2f;
 
     private float currentCollisionCD = 0f;
 
@@ -21,6 +22,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             animator.SetTrigger(STUMBLE_HIT_ANIM_TRIGGER);
             currentCollisionCD = 0;
+            LevelGenerator.Instance.AddChunkMoveSpeed(-collisionSpeedPenalty);
         }
     }
 }

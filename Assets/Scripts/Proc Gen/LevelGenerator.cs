@@ -3,14 +3,24 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public static LevelGenerator Instance { get; private set; }
 
     [SerializeField] private GameObject levelChunkPrefab;
     [SerializeField] private Transform levelChunkParent;
     [SerializeField] private int chunkAmount;
     [SerializeField] private float chunkLength;
     [SerializeField] private float chunkMoveSpeed;
+    [SerializeField] private float minChunkMoveSpeed = 4f;
 
     private List<GameObject> levelChunks = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -20,6 +30,18 @@ public class LevelGenerator : MonoBehaviour
     private void Update()
     {
         MoveChunks();
+    }
+
+    public void AddChunkMoveSpeed(float increase)
+    {
+        this.chunkMoveSpeed += increase;
+
+        if (chunkMoveSpeed < minChunkMoveSpeed)
+        {
+            chunkMoveSpeed = minChunkMoveSpeed;
+        }
+
+        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, Physics.gravity.z - increase);
     }
 
     private void GenerateLevelChunks()

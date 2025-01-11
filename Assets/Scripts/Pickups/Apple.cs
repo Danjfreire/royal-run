@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Apple : Pickup
 {
+    [SerializeField] private float speedBonus = 2f;
+
     protected override void OnPickUp()
     {
-        Debug.Log("Collected Apple");
+        LevelGenerator.Instance.AddChunkMoveSpeed(speedBonus);
     }
 }
