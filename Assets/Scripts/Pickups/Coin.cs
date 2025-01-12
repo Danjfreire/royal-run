@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Coin : Pickup
 {
+    [SerializeField] private int score;
+
     protected override void OnPickUp()
     {
-        Debug.Log("Collected Coin");
+        ScoreManager.Instance.IncreaseScore(score);
     }
 }
