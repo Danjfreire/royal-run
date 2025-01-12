@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float maxFOV = 90f;
     [SerializeField] private float zoomSpeedMultiplier = 5f;
     [SerializeField] private float zoomDuration = 1f;
+    [SerializeField] private ParticleSystem speedUpParticleSystem;
 
     CinemachineCamera cinemachineCamera;
 
@@ -21,6 +22,10 @@ public class CameraController : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ChangeFOVRoutine(speedAmount));
+        if (speedAmount > 0)
+        {
+            speedUpParticleSystem.Play();
+        }
     }
 
     IEnumerator ChangeFOVRoutine(float speedAmount)
