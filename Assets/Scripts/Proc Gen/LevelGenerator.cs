@@ -5,13 +5,19 @@ public class LevelGenerator : MonoBehaviour
 {
     public static LevelGenerator Instance { get; private set; }
 
+    [Header("References")]
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject levelChunkPrefab;
     [SerializeField] private Transform levelChunkParent;
+
+    [Header("Level Settings")]
     [SerializeField] private int chunkAmount;
     [SerializeField] private float chunkLength;
     [SerializeField] private float chunkMoveSpeed;
     [SerializeField] private float minChunkMoveSpeed = 4f;
+    [SerializeField] private float maxChunkMoveSpeed = 20f;
+    [SerializeField] private float maxGravityZ = -22f;
+    [SerializeField] private float minGravityZ = -2f;
 
     private List<GameObject> levelChunks = new List<GameObject>();
 
@@ -35,14 +41,16 @@ public class LevelGenerator : MonoBehaviour
 
     public void AddChunkMoveSpeed(float increase)
     {
-        this.chunkMoveSpeed += increase;
+        float newMoveSpeed = Mathf.Clamp(chunkMoveSpeed + increase, minChunkMoveSpeed, maxChunkMoveSpeed);
 
-        if (chunkMoveSpeed < minChunkMoveSpeed)
-        {
-            chunkMoveSpeed = minChunkMoveSpeed;
-        }
+        if (newMoveSpeed == chunkMoveSpeed) return;
 
-        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, Physics.gravity.z - increase);
+        chunkMoveSpeed = newMoveSpeed;
+
+        chunkMoveSpeed = Mathf.Clamp(chunkMoveSpeed, minChunkMoveSpeed, maxChunkMoveSpeed);
+        float gravityZ = Mathf.Clamp(Physics.gravity.z - increase, maxGravityZ, minGravityZ);
+
+        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, gravityZ);
         cameraController.ChangeCameraFOV(increase);
     }
 
