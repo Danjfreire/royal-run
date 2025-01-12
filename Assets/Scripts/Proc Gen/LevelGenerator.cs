@@ -5,6 +5,7 @@ public class LevelGenerator : MonoBehaviour
 {
     public static LevelGenerator Instance { get; private set; }
 
+    [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject levelChunkPrefab;
     [SerializeField] private Transform levelChunkParent;
     [SerializeField] private int chunkAmount;
@@ -42,6 +43,7 @@ public class LevelGenerator : MonoBehaviour
         }
 
         Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, Physics.gravity.z - increase);
+        cameraController.ChangeCameraFOV(increase);
     }
 
     private void GenerateLevelChunks()
