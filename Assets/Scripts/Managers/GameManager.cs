@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [SerializeField] private PlayerController playerController;
     [SerializeField] private TMP_Text timeText;
     [SerializeField] private GameObject gameOverText;
@@ -10,6 +12,16 @@ public class GameManager : MonoBehaviour
 
     private float remainingTime;
     private bool gameOver;
+
+    public bool GameOver { get { return gameOver; } }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -23,18 +35,18 @@ public class GameManager : MonoBehaviour
 
     private void DecreaseTime()
     {
-        if (gameOver) return;
+        if (GameOver) return;
 
         remainingTime -= Time.deltaTime;
         timeText.text = remainingTime.ToString("F1");
 
         if (remainingTime <= 0)
         {
-            GameOver();
+            PlayerGameOver();
         }
     }
 
-    private void GameOver()
+    private void PlayerGameOver()
     {
         gameOver = true;
         playerController.enabled = false;

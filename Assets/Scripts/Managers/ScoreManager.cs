@@ -24,6 +24,8 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScore(int increase)
     {
+        if (GameManager.Instance.GameOver) return;
+
         score += increase;
         scoreText.text = score.ToString();
     }
