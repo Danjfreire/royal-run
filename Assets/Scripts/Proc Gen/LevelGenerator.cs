@@ -7,10 +7,12 @@ public class LevelGenerator : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private CameraController cameraController;
-    [SerializeField] private GameObject levelChunkPrefab;
+    [SerializeField] private GameObject[] levelChunkPrefabs;
+    [SerializeField] private GameObject checkpointPrefab;
     [SerializeField] private Transform levelChunkParent;
 
     [Header("Level Settings")]
+    [SerializeField] private int checkpointDistance;
     [SerializeField] private int chunkAmount;
     [SerializeField] private float chunkLength;
     [SerializeField] private float chunkMoveSpeed;
@@ -20,6 +22,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float minGravityZ = -2f;
 
     private List<GameObject> levelChunks = new List<GameObject>();
+    private int spawnedChunks = 0;
 
     private void Awake()
     {
@@ -96,7 +99,24 @@ public class LevelGenerator : MonoBehaviour
         }
 
         Vector3 position = new Vector3(transform.position.x, transform.position.y, spawnPositionZ);
-        GameObject levelChunk = Instantiate(levelChunkPrefab, position, Quaternion.identity, levelChunkParent);
+        GameObject levelChunk = Instantiate(GetChunkToSpawn(), position, Quaternion.identity, levelChunkParent);
         levelChunks.Add(levelChunk);
+        spawnedChunks++;
+    }
+
+    private GameObject GetChunkToSpawn()
+    {
+        GameObject chunkToSpawn;
+
+        if (spawnedChunks % checkpointDistance == 0 && spawnedChunks != 0)
+        {
+            chunkToSpawn = checkpointPrefab;
+        }
+        else
+        {
+            chunkToSpawn = levelChunkPrefabs[Random.Range(0, levelChunkPrefabs.Length)];
+        }
+
+        return chunkToSpawn;
     }
 }

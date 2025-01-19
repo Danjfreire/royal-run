@@ -5729,8 +5729,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraController: {fileID: 451957654}
-  levelChunkPrefab: {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  levelChunkPrefabs:
+  - {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  - {fileID: 179055275639612536, guid: c6c42e03a3a8e294c8aa6ecda8854820, type: 3}
+  - {fileID: 179055275639612536, guid: 03b48de7453d83a40b3b9d628dac16ee, type: 3}
+  - {fileID: 179055275639612536, guid: e4b025ff75cab7948854fe42790b5a7c, type: 3}
+  - {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  - {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  - {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  checkpointPrefab: {fileID: 1383521159132182094, guid: 4ffbd6571edb2474d9e46e0b8127a4c7, type: 3}
   levelChunkParent: {fileID: 212708229}
+  checkpointDistance: 10
   chunkAmount: 12
   chunkLength: 10
   chunkMoveSpeed: 8
@@ -6347,7 +6356,7 @@ MonoBehaviour:
   playerController: {fileID: 1486242701}
   timeText: {fileID: 656634412}
   gameOverText: {fileID: 1399747251}
-  startTime: 5
+  startTime: 30
 --- !u!1001 &1994052114009907912
 PrefabInstance:
   m_ObjectHideFlags: 0
