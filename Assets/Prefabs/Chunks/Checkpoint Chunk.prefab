@@ -234,8 +234,53 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1972520053451425275, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3651235533118298677}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1407389935408995998}
+    - targetCorrespondingSourceObject: {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2802156339002056814}
   m_SourcePrefab: {fileID: 100100000, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+--- !u!1 &1383521159132182094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4424207931475304043, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
+  m_PrefabInstance: {fileID: 3339050261791533093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407389935408995998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383521159132182094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5aa272478a9714ab835c9ef75bfc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseTime: 5
+--- !u!65 &2802156339002056814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383521159132182094}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12, y: 12, z: 1}
+  m_Center: {x: 0.01691389, y: 1.2478924, z: 0}
 --- !u!4 &3821722150034533854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1972520053451425275, guid: c11a9595c0f17df4587af73c4fb9241c, type: 3}
