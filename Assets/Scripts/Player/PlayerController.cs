@@ -29,11 +29,11 @@ public class PlayerController : MonoBehaviour
     {
         float speed = Time.fixedDeltaTime * moveSpeed;
 
-        Vector3 moveDirection = new Vector3(movement.x, 0f, movement.y);
+        Vector3 moveDirection = new Vector3(movement.x, 0f, 0f);
         Vector3 targetPosition = rb.position + moveDirection * speed;
 
         targetPosition.x = Mathf.Clamp(targetPosition.x, -xBound, xBound);
-        targetPosition.z = Mathf.Clamp(targetPosition.z, -zBound, zBound);
+        // targetPosition.z = Mathf.Clamp(targetPosition.z, -zBound, zBound);
 
         rb.MovePosition(targetPosition);
     }
