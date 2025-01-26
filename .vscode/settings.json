@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "royal-run.sln"
+    "dotnet.defaultSolution": "Royal Run.sln"
 }
